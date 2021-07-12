@@ -1,0 +1,15 @@
+{% extends "core.html" %}
+{% block body %}
+<h1> Welcome to the MultiMC instances repository!</h1>
+
+<h2>Fill out the form below to upload an exported MultiMC instance</h2>
+
+<form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+    <p>
+        <label class="form_label">Instance Name</label>
+        <input class="note_input" type="text" name="name" placeholder="Instance Name" />
+    </p>
+    <input type="file" name="file">
+    <p><input class="note_input" type="submit" value="Upload Instance" /></p>
+</form>
+{% endblock body %}

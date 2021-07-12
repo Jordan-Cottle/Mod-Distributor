@@ -1,0 +1,27 @@
+{% extends "core.html" %}
+{% block body %}
+<h1>Browse uploaded instances</h1>
+
+<table>
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Download</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for instance in instances %}
+        <tr>
+            <td>{{instance.instance_id}}</td>
+            <td><a
+                    href="{{ url_for('view_instance', instance_id=instance.instance_id) }}">{{instance.instance_name}}</a>
+            </td>
+            <td><a
+                    href="{{ url_for('download_instance', instance_id=instance.instance_id) }}">{{instance.file_name}}</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock body %}

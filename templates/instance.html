@@ -1,0 +1,9 @@
+{% extends "core.html" %}
+{% block body %}
+<h1>MultiMC Instance: {{ instance_info.instance_name }}</h1>
+
+<p>
+    Direct Download:
+    <a href="{{ url_for('download_instance', instance_id=instance_info.instance_id) }}">{{instance_info.file_name}}</a>
+</p>
+{% endblock body %}

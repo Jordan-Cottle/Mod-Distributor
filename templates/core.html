@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Repository for sharing multimc exported instances">
+    <title>MultiMC instances</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+
+<body>
+    <h1>MultiMC Instances</h1>
+
+    <nav>
+        {% block navigation %}
+        <ul>
+            <li><a href="{{ url_for('main_page') }}">Home</a></li>
+            <li><a href="{{ url_for('view_instances') }}">Find</a></li>
+            <li><a href="{{ url_for('upload') }}">Upload</a></li>
+        </ul>
+        {% endblock navigation %}
+    </nav>
+
+    {% block body %}
+    {% endblock %}
+</body>
+
+</html>

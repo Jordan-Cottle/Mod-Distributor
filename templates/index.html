@@ -1,0 +1,39 @@
+{% extends "core.html" %}
+{% block body %}
+<h1> Welcome to the MultiMC instances repository!</h1>
+
+<p>Share your exported multimc instances with your friends here</p>
+
+<h2>Using this website</h2>
+
+<p>
+    This website is designed to make sharing minecraft instances exported using
+    <a href="https: //multimc.org/">multimc</a> easier. You can upload an exported instance here and give the link to
+    your friends. MultiMC supports importing an exported instance via a direct download url that this server will
+    provide.
+</p>
+
+<h2>Uploading</h2>
+<p>
+    To upload an instance, navigate to the <a href="{{ url_for('upload') }}">upload page</a>, give your instance a name,
+    click "Choose File" to select the exported instance file from MultiMC, then click "Upload Instance" to submit the
+    form. You will be taken to the unique page generated for your instance where you can copy the download link to share
+    with friends.
+</p>
+
+<h2>Viewing instances</h2>
+<p>
+    You can view all of the uploaded instance by navigating to the
+    <a href="{{ url_for('view_instances') }}">view page</a>.
+</p>
+
+<h2>Download instances</h2>
+<p>
+    From the <a href="{{ url_for('view_instances') }}">view page</a> and the instance detail page provide links to
+    download the exported MultiMC instance. You can copy this link and paste it into MultiMC as the url for a direct
+    download when importing as a zip.
+</p>
+
+<img alt="Put the url into the box underneath Local file or link to direct download:"
+    src="{{ url_for('static', filename='multimc-url-how-to.png') }}">
+{% endblock body %}
